@@ -122,14 +122,15 @@
     <table class="mt-10 font-size-10 break-page-before">
       <tr>
           <td colspan="6" class="space-1/2">Number of Facility</td>
-          <td class="space-1/2">(Select from the Drop down of number of Facilities )</td>
+          <td class="space-1/2">{{data.facility_sub.0.number_of_facility}}</td>
       </tr>
     </table>
 
+    {% for facility in data.facility_sub.0.facilities %}
     <table class="mt-10 font-size-10 break-page-even">
       <tr>
         <th colspan="2">Name of the tourism accomodation facility:</th>
-        <td colspan="5">Drop down of the list of hotels (Facility A)</td>
+        <td colspan="5">{{facility.facility_name}}</td>
       </tr>
       <tr >
         <th colspan="2">Registration number of facility</th>
@@ -144,41 +145,26 @@
         <th>Potential Turnover</th>
         <th>Actual Turnover</th>   
       </tr>
+      {% for room in facility.rooms %}
+      <tr>
+        <th></th>
+        <td>{{room.room_type}}</td>
+        <td class="text-right">{{room.number_of_rooms}}</td>
+        <td class="text-right">{{room.price_per_night|intcomma}}</td>
+        <td class="text-right">{{room.days_in_month}}</td>
+        <td class="text-right">{{room.potential_turnover|intcomma}}</td>
+        <td class="text-right">{{room.actual_turnover|intcomma}}</td>
+      </tr>
+      {% endfor %}
+      
       <tr>
         <th>1</th>
-        <td>< Room Type 1></td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-      </tr>
-      <tr>
-        <th>2</th>
-        <td>< Room Type 2></td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-      </tr>
-      <tr>
-        <th>3</th>
-        <td>< Room Type 3></td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
-      </tr>
-      <tr>
-        <th>4</th>
         <td><b>Total</b> (Sum of row 1 to 3)</td>
-        <td class="text-right">-</td>
+        <td class="text-right">{{facility.total_number_of_rooms}}</td>
         <th></th>
         <th></th>
-        <td class="text-right">-</td>
-        <td class="text-right">-</td>
+        <td class="text-right">{{facility.total_potential_turnover|intcomma}}</td>
+        <td class="text-right">{{facility.total_actual_turnover|intcomma}}</td>
       </tr>
       <tr>
         <th></th>
@@ -190,7 +176,7 @@
         <th></th>
       </tr>
       <tr>
-        <th>5</th>
+        <th>2</th>
         <td>Adjustment (Provide descriptions)
         </td>
         <th></th>
@@ -228,6 +214,7 @@
         <td class="text-right">-</td>
       </tr>
     </table>
+    {% endfor %}
 
     <table class="mt-10 font-size-10">
       <tr>
@@ -236,7 +223,7 @@
       <tr>
         <th></th>
         <td><b>Total Amount (Row 9 plus 22)</b></td>
-        <td class="w-70 text-right">-</td>
+        <td class="w-70 text-right">{{data.facility_sub.0.gross_amount}}</td>
       </tr>
       <tr>
         <th class="w-30"></th>
@@ -246,12 +233,12 @@
       <tr>
         <th></th>
         <td><b>Total amount subject to Levy</b></td>
-        <td class="w-70 text-right">-</td>
+        <td class="w-70 text-right">{{data.facility_sub.0.bed_night_levy_payable}}</td>
       </tr>
       <tr>
         <th>9</th>
         <td><b>Total Levy payable</b></td>
-        <td class="w-70 text-right">{{data.bed_night_levy_payable|intcomma}}</td>
+        <td class="w-70 text-right">{{data.facility_sub.0.total_monthly_bed_night_levy_payable|intcomma}}</td>
       </tr>
     </table>
   </section>

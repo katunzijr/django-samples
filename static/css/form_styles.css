@@ -46,5 +46,5 @@ th {
 
 .yellow-300 {background-color: #edebe0;}
 
-.break-page-even:nth-child(2n+1) {page-break-after: always;}
+.break-page-even:nth-child(2n) {page-break-after: always;}
 .break-page-before {page-break-before: always;}

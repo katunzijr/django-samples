@@ -149,7 +149,7 @@ def generate_pdf(request):
 
     # Convert the generated PDF to base64 encoded string (for optional use)
     base64_encoded_pdf = pdf_to_base64()
-    print(f"Base64 encoded PDF: {base64_encoded_pdf}")
+    # print(f"Base64 encoded PDF: {base64_encoded_pdf}")
     
     # Render the generated PDF as a downloadable response
     response = render_pdf_file()

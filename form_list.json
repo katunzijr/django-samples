@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "initial": "bnl",
+        "name": "Bed Night Levy",
+        "note": "This return is filed under the provisions of Regulation 5 (1) of the Tourism (Tourism Development Levy) Regulations 2013.",
+        "note_cont": "You are hereby required to submit the Return within 7 days after the end of each calendar month period.",
+        "part_2_tilte": "Bed Night Levy (Amount in TZS)",
+        "html_template_path": "bnl/bed_night_levy.html",
+        "pdf_output_path": "bnl/bed_night_levy.pdf"
+    },{
+        "id": 2,
+        "initial": "lbc",
+        "name": "Gaming Tax On Land based Casino",
+        "note": "Note: This return is submitted under the provision of Section 32 of the Gaming Act, 2003 R.E. 2019.",
+        "note_cont": "You are hereby required to submit the Return within 3 days after the end of each calendar week period, not later than Wednesday in each week.",
+        "part_2_tilte": "Land based Casino - Gaming Return (Amount in TZS)",
+        "html_template_path": "gt/land_based_casino.html",
+        "pdf_output_path": "gt/land_based_casino.pdf"
+    }
+]

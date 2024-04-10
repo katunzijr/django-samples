@@ -18,12 +18,22 @@ options = {
 # File paths (modify as needed)
 css_path = 'static/css/form_styles.css'
 image_folder = 'static/images/'
-template_folder = 'templates/forms/bnl/'
-pdf_output_path = 'templates/forms/output_sample.pdf'
+template_folder = 'templates/forms/'
+form_list_path = 'form_list.json'
 context = {}
 
 
-def read_json_file(json_filepath):
+def read_json_form_file(target_initial):
+    try:
+        with open(form_list_path, "r") as f:
+            data = json.load(f)
+            filtered_data = [item for item in data if item["initial"] == target_initial]
+            return filtered_data
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        raise Exception(f"Error reading JSON file: {form_list_path}. Reason: {e}")
+
+
+def read_json_data_file(json_filepath):
     """
     Reads a JSON file and returns its contents as a dictionary.
 
@@ -45,7 +55,7 @@ def read_json_file(json_filepath):
         raise Exception(f"Error reading JSON file: {json_filepath}. Reason: {e}")
 
 
-def render_pdf_file():
+def render_pdf_file(pdf_output_path):
     """
     Renders the generated PDF as an HTTP response for download.
 
@@ -84,7 +94,7 @@ def get_image_file_as_base64_data(img_name, img_ext):
         return f'data:image/{img_ext};base64,{base64.b64encode(image_file.read()).decode()}'
 
 
-def pdf_to_base64():
+def pdf_to_base64(pdf_output_path):
   """Converts a PDF file to base64 encoded string.
 
   Args:
@@ -105,7 +115,7 @@ def pdf_to_base64():
     raise Exception(f"Error reading PDF file: {pdf_output_path}. Reason: {e}")
 
 
-def generate_pdf(request):
+def generate_pdf(request, form_initial):
     """
     Generates a PDF from a JSON data file and a template, returning an HTTP response.
 
@@ -122,7 +132,8 @@ def generate_pdf(request):
     """
 
     # Load data from JSON file
-    context['data'] = read_json_file("bnl_return_data.json")
+    context['general_data'] = read_json_form_file(form_initial)
+    context['data'] = read_json_data_file("bnl_return_data.json")
 
     # Load image data as base64 encoded strings (for potential use in the template)
     context['qrcode'] = get_image_file_as_base64_data('qrcode', 'png')
@@ -130,7 +141,7 @@ def generate_pdf(request):
     context['signature'] = get_image_file_as_base64_data('signature', 'png')
 
     # Construct the full path to the HTML template file
-    html_file_template = os.path.join(template_folder, 'bnl.html')
+    html_file_template = os.path.join(template_folder, context['general_data'][0]['html_template_path'])
 
     # Open the template file and read its contents
     try:
@@ -144,13 +155,13 @@ def generate_pdf(request):
     html_file_string = template_str.render(Context(context)) 
 
     # Generate the PDF using pdfkit from the rendered HTML string
-    pdfkit.from_string(html_file_string, pdf_output_path, options=options, css=css_path)
+    pdfkit.from_string(html_file_string, template_folder+context['general_data'][0]['pdf_output_path'], options=options, css=css_path)
     print('PDF GENERATED SUCCESSFUL!') 
 
     # Convert the generated PDF to base64 encoded string (for optional use)
-    base64_encoded_pdf = pdf_to_base64()
+    base64_encoded_pdf = pdf_to_base64(template_folder+context['general_data'][0]['pdf_output_path'])
     # print(f"Base64 encoded PDF: {base64_encoded_pdf}")
     
     # Render the generated PDF as a downloadable response
-    response = render_pdf_file()
+    response = render_pdf_file(template_folder+context['general_data'][0]['pdf_output_path'])
     return response

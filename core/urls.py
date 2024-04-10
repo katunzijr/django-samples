@@ -21,5 +21,5 @@ from forms import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('forms/generate_pdf', views.generate_pdf),
+    path('forms/generate_pdf/<str:form_initial>', views.generate_pdf),
 ]

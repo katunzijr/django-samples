@@ -1,0 +1,133 @@
+{% extends "forms/layout/wrapper.html" %}
+{% load humanize %}
+{% block form %}
+
+<section>
+  <div class="break-page-before">
+    <p class="text-center"><span class="font-bold">Part 2 - </span>Details of Bed Night Levy (Amount in TZS)</p>
+  </div>
+  <table class="mt-10 font-size-10">
+    <tr>
+        <td colspan="6" class="space-1/2">Number of Facility</td>
+        <td class="space-1/2">{{data.facility_sub.0.number_of_facility}}</td>
+    </tr>
+  </table>
+
+  {% for facility in data.facility_sub.0.facilities %}
+  <table class="mt-10 font-size-10 break-page-even">
+    <tr>
+      <th colspan="2">Name of the tourism accomodation facility:</th>
+      <td colspan="5">{{facility.facility_name}}</td>
+    </tr>
+    <tr >
+      <th colspan="2">Registration number of facility</th>
+      <td colspan="5">{{facility.id}}</td>
+    </tr>
+    <tr>
+      <th>Sn</th>
+      <th>Description</th>
+      <th>Number of rooms</th>
+      <th>Price per night</th>
+      <th>Days in a month</th>
+      <th>Potential Turnover</th>
+      <th>Actual Turnover</th>   
+    </tr>
+    {% for room in facility.rooms %}
+    <tr>
+      <th></th>
+      <td>{{room.room_type}}</td>
+      <td class="text-right">{{room.number_of_rooms}}</td>
+      <td class="text-right">{{room.price_per_night|intcomma}}</td>
+      <td class="text-right">{{room.days_in_month}}</td>
+      <td class="text-right">{{room.potential_turnover|intcomma}}</td>
+      <td class="text-right">{{room.actual_turnover|intcomma}}</td>
+    </tr>
+    {% endfor %}
+    
+    <tr>
+      <th>1</th>
+      <td><b>Total</b> (Sum of rooms)</td>
+      <td class="text-right">{{facility.total_number_of_rooms}}</td>
+      <th></th>
+      <th></th>
+      <td class="text-right">{{facility.total_potential_turnover|intcomma}}</td>
+      <td class="text-right">{{facility.total_actual_turnover|intcomma}}</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><b>Less:</b></td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adjustment (Provide descriptions)
+      </td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Total charges subject to Bed Night Levy (Row 1 minus Row 2)
+      </td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Rate of Bed Night Levy</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">1%</td>
+    </tr>
+    <tr>
+      <th class="w-30">5</th>
+      <td><b>Total Bed Night Levy Payable for the Month</b></td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+  </table>
+  {% endfor %}
+
+  <table class="mt-10 font-size-10">
+    <tr>
+      <th colspan="3"><b>Summary</b></th>
+    </tr>
+    <tr>
+      <th class="w-30">6</th>
+      <td><b>Total Amount <!--(Row 9 plus 22)--></b></td>
+      <td class="w-70 text-right">{{data.facility_sub.0.gross_amount}}</td>
+    </tr>
+    <tr>
+      <th class="w-30">7</th>
+      <td><b>Total Adjustments <!--(Row 11 plus 24)--></b></td>
+      <td class="w-70 text-right">-</td>
+    </tr>
+    <tr>
+      <th class="w-30">8</th>
+      <td><b>Total amount subject to Levy</b></td>
+      <td class="w-70 text-right">{{data.facility_sub.0.bed_night_levy_payable}}</td>
+    </tr>
+    <tr>
+      <th class="w-30">9</th>
+      <td><b>Total Levy payable</b></td>
+      <td class="w-70 text-right">{{data.facility_sub.0.total_monthly_bed_night_levy_payable|intcomma}}</td>
+    </tr>
+  </table>
+</section>
+
+{% endblock %}

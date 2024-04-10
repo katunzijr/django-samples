@@ -1,0 +1,189 @@
+{% extends "forms/layout/wrapper.html" %}
+{% load humanize %}
+{% block form %}
+
+<section>
+  <div class="break-page-before">
+    <p class="text-center"><span class="font-bold">Part 2 - </span>Details of Land based Casino - Gaming Return (Amount in TZS)</p>
+  </div>
+  <table class="mt-10 font-size-10">
+    <tr>
+      <td colspan="8">PART A-TABLE GAMES</td>
+    </tr>
+    <tr>
+      <th class="w-30" >Sn</th>
+      <th>Description</th>
+      <th>Opening Float (A)</th>
+      <th>Drops (B)</th>
+      <th>Fills (C)</th>
+      <th>Credit (D)</th>
+      <th>Closing Float (E)</th>   
+      <th>Table Revenue = (E-A+B-C+D)</th>   
+    </tr>
+    <tr>
+      <th></th>
+      <td>Table Game Type 1</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Table Game Type 2</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Table Game Type 3</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <td colspan="8">PART B-GAMING MACHINES</td>
+    </tr>
+    <tr>
+      <th>Sn</th>
+      <th>Description</th>
+      <th>Opening Float (A)</th>
+      <th>Drops (B)</th>
+      <th>Fills (C)</th>
+      <th>Total Amount Wegered (B)</th>
+      <th>Total Gamblers Winnings (C)</th>   
+      <th>Slot Machine Revenue D = (B-C)</th>   
+    </tr>
+    <tr>
+      <th></th>
+      <td>Machine Game Type 1</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Machine Game Type 2</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Machine Game Type 3</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><b>SubTotal</b>(PART B)</td>
+      <td class="text-right">-</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><b>Gross Casino Revenue (GGR) (PART A AND PARTB)</b></td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <td><b>Less:</b></td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Adjustment (Provide descriptions)</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th >6</th>
+      <td>Total Charges subject to Gaming Tax (Row 4 minus 5)</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th >7</th>
+      <td>Rate of Gaming Tax</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">18%</td>
+    </tr>
+    <tr>
+      <th >8</th>
+      <td><b>Gaming Tax Payable </b>(Row 6 times 7)</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th >9</th>
+      <td>Penalty for late filing</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th >10</th>
+      <td><b>Total Gaming Tax Payable for the Week</b></td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+  </table>
+</section>
+
+  {% endblock %}

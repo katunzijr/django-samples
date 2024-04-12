@@ -133,7 +133,7 @@ def generate_pdf(request, form_initial):
 
     # Load data from JSON file
     context['general_data'] = read_json_form_file(form_initial)
-    context['data'] = read_json_data_file("bnl_return_data.json")
+    context['data'] = read_json_data_file(template_folder+context['general_data'][0]['data_path'])
 
     # Load image data as base64 encoded strings (for potential use in the template)
     context['qrcode'] = get_image_file_as_base64_data('qrcode', 'png')

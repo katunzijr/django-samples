@@ -1,0 +1,319 @@
+{
+    "id": 1,
+    "return_master": {
+        "return_id": null,
+        "tracking": {
+            "reference_id": "202310013529858117803",
+            "tracking_id": null,
+            "category": 91,
+            "taxpayer_id": 100135298,
+            "taxpayer_id_declr": 102591240,
+            "branch_id": 0,
+            "no_of_submissions": 1,
+            "year_of_income": 2023,
+            "period": 5,
+            "status_ct": "SAV",
+            "submission_date": "2023-05-08T14:11:07.804834Z",
+            "is_mining": "N",
+            "acknowledge_ref": "202310013529858117803",
+            "entrydate": "2023-05-08T14:11:07.804834Z",
+            "staff_no": null,
+            "taxpayer_id_audfirm": null,
+            "taxpayer_id_auditor": null,
+            "duedate": null,
+            "ip_address": "127.0.0.1",
+            "certified_date": null,
+            "finalroisubmit_date": "2023-05-08",
+            "template_type": 1,
+            "adjust_counts": 0
+        },
+        "taxpayer_id": 100135298,
+        "branch_id": 0,
+        "taxpayer_id_declr": 102591240,
+        "yearofincome": 2023,
+        "startdate": "2023-01-01",
+        "enddate": "2023-12-31",
+        "submissiondate": "2023-05-08",
+        "category": 91,
+        "residential_status": "RES",
+        "entity_type": null,
+        "entity_parent_name": null,
+        "is_mining": "N",
+        "status_ct": "SAV",
+        "changeuser": null,
+        "changedate": null,
+        "change_app_user": null,
+        "ipaddress": "127.0.0.1",
+        "err_msg": null,
+        "site": 40,
+        "itaxtype_ct": null,
+        "period": 5,
+        "declarant_posn": null,
+        "entrydate": "2023-05-08",
+        "staff_no": null,
+        "duedate": null,
+        "assessment_no": null,
+        "assess_final_bv": null,
+        "net_tax_payable": null,
+        "computername": null
+    },
+    "tracking": {
+        "reference_id": "202310013529858117803",
+        "tracking_id": null,
+        "category": 91,
+        "taxpayer_id": 100135298,
+        "taxpayer_id_declr": 102591240,
+        "branch_id": 0,
+        "no_of_submissions": 1,
+        "year_of_income": 2023,
+        "period": 5,
+        "status_ct": "SAV",
+        "submission_date": "2023-05-08T14:11:07.804834Z",
+        "is_mining": "N",
+        "acknowledge_ref": "202310013529858117803",
+        "entrydate": "2023-05-08T14:11:07.804834Z",
+        "staff_no": null,
+        "taxpayer_id_audfirm": null,
+        "taxpayer_id_auditor": null,
+        "duedate": null,
+        "ip_address": "127.0.0.1",
+        "certified_date": null,
+        "finalroisubmit_date": "2023-05-08",
+        "template_type": 1,
+        "adjust_counts": 0
+    },
+    "facility_sub":[
+        {
+            "id": 1,
+            "number_of_facility": 2,
+            "facilities": [
+                {
+                    "id": 1,
+                    "facility_name": "Serena Posta",
+                    "rooms": [
+                        {
+                            "id": 1,
+                            "room_type": "Single",
+                            "number_of_rooms": 10,
+                            "price_per_night": "10000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 3100000,
+                            "actual_turnover": "2000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 2,
+                            "room_type": "Double",
+                            "number_of_rooms": 5,
+                            "price_per_night": "20000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 3100000,
+                            "actual_turnover": "1000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 3,
+                            "room_type": "Presidential",
+                            "number_of_rooms": 5,
+                            "price_per_night": "300000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 46500000,
+                            "actual_turnover": "12000000.00",
+                            "created_at": "2023-05-08"
+                        }
+                    ],
+                    "total_number_of_rooms": 20,
+                    "total_potential_turnover": 52700000,
+                    "total_actual_turnover": 15000000,
+                    "total_levy_charges": 150000,
+                    "total_monthly_bed_night_levy": 150000
+                },
+                {
+                    "id": 2,
+                    "facility_name": "Kilimanjaro Hotel",
+                    "rooms": [
+                        {
+                            "id": 4,
+                            "room_type": "Single",
+                            "number_of_rooms": 20,
+                            "price_per_night": "10000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 6200000,
+                            "actual_turnover": "10000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 5,
+                            "room_type": "Double",
+                            "number_of_rooms": 3,
+                            "price_per_night": "120000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 11160000,
+                            "actual_turnover": "1000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 6,
+                            "room_type": "Presidential",
+                            "number_of_rooms": 2,
+                            "price_per_night": "500000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 31000000,
+                            "actual_turnover": "15000000.00",
+                            "created_at": "2023-05-08"
+                        }
+                    ],
+                    "total_number_of_rooms": 25,
+                    "total_potential_turnover": 48360000,
+                    "total_actual_turnover": 26000000,
+                    "total_levy_charges": 260000,
+                    "total_monthly_bed_night_levy": 260000
+                },
+                {
+                    "id": 3,
+                    "facility_name": "Jr Hotel",
+                    "rooms": [
+                        {
+                            "id": 4,
+                            "room_type": "Single Room",
+                            "number_of_rooms": 20,
+                            "price_per_night": "20000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 6200000,
+                            "actual_turnover": "10000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 5,
+                            "room_type": "Self Room",
+                            "number_of_rooms": 3,
+                            "price_per_night": "130000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 11160000,
+                            "actual_turnover": "1000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 6,
+                            "room_type": "Presidential Room",
+                            "number_of_rooms": 2,
+                            "price_per_night": "700000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 31000000,
+                            "actual_turnover": "15000000.00",
+                            "created_at": "2023-05-08"
+                        }
+                    ],
+                    "total_number_of_rooms": 25,
+                    "total_potential_turnover": 48360000,
+                    "total_actual_turnover": 26000000,
+                    "total_levy_charges": 260000,
+                    "total_monthly_bed_night_levy": 260000
+                },
+                {
+                    "id": 4,
+                    "facility_name": "JKLM Hotel",
+                    "rooms": [
+                        {
+                            "id": 4,
+                            "room_type": "Single",
+                            "number_of_rooms": 20,
+                            "price_per_night": "20000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 6200000,
+                            "actual_turnover": "10000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 5,
+                            "room_type": "Double",
+                            "number_of_rooms": 3,
+                            "price_per_night": "120000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 11160000,
+                            "actual_turnover": "1000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 6,
+                            "room_type": "Presidential",
+                            "number_of_rooms": 2,
+                            "price_per_night": "500000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 31000000,
+                            "actual_turnover": "15000000.00",
+                            "created_at": "2023-05-08"
+                        }
+                    ],
+                    "total_number_of_rooms": 25,
+                    "total_potential_turnover": 48360000,
+                    "total_actual_turnover": 26000000,
+                    "total_levy_charges": 260000,
+                    "total_monthly_bed_night_levy": 260000
+                },
+                {
+                    "id": 5,
+                    "facility_name": "Omega Hotel",
+                    "rooms": [
+                        {
+                            "id": 4,
+                            "room_type": "Single",
+                            "number_of_rooms": 20,
+                            "price_per_night": "10000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 6200000,
+                            "actual_turnover": "10000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 5,
+                            "room_type": "Double",
+                            "number_of_rooms": 3,
+                            "price_per_night": "120000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 11160000,
+                            "actual_turnover": "1000000.00",
+                            "created_at": "2023-05-08"
+                        },
+                        {
+                            "id": 6,
+                            "room_type": "Presidential",
+                            "number_of_rooms": 2,
+                            "price_per_night": "500000.00",
+                            "days_in_month": 31,
+                            "potential_turnover": 31000000,
+                            "actual_turnover": "15000000.00",
+                            "created_at": "2023-05-08"
+                        }
+                    ],
+                    "total_number_of_rooms": 25,
+                    "total_potential_turnover": 48360000,
+                    "total_actual_turnover": 26000000,
+                    "total_levy_charges": 260000,
+                    "total_monthly_bed_night_levy": 260000
+                }
+            ],
+            "gross_amount": 41000000,
+            "bed_night_levy_payable": 410000,
+            "total_monthly_bed_night_levy_payable": 410000
+        }
+    ],
+    "region_name": null,
+    "taxpayer_id": 100135298,
+    "gross_amount": "41000000.00",
+    "interest": null,
+    "bed_night_levy_payable": "410000.00",
+    "penalty": null,
+    "monthly_bed_night_levy": "410000.00",
+    "rm_name": null,
+    "assessment_no": null,
+    "site": 40,
+    "reference_no": "202310013529858117900",
+    "period": 5,
+    "year_of_income": 2023,
+    "title_name": null,
+    "staff_no": null,
+    "computername": null,
+    "ipaddress": "127.0.0.1",
+    "entrydate": "2023-05-08"
+}

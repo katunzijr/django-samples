@@ -7,7 +7,8 @@
         "note_cont": "You are hereby required to submit the Return within 7 days after the end of each calendar month period.",
         "part_2_tilte": "Bed Night Levy (Amount in TZS)",
         "html_template_path": "bnl/bed_night_levy.html",
-        "pdf_output_path": "bnl/bed_night_levy.pdf"
+        "pdf_output_path": "bnl/bed_night_levy.pdf",
+        "data_path": "bnl/bed_night_levy.json"
     },{
         "id": 2,
         "initial": "lbc",
@@ -16,6 +17,7 @@
         "note_cont": "You are hereby required to submit the Return within 3 days after the end of each calendar week period, not later than Wednesday in each week.",
         "part_2_tilte": "Land based Casino - Gaming Return (Amount in TZS)",
         "html_template_path": "gt/land_based_casino.html",
-        "pdf_output_path": "gt/land_based_casino.pdf"
+        "pdf_output_path": "gt/land_based_casino.pdf",
+        "data_path": "gt/land_based_casino.json"
     }
 ]

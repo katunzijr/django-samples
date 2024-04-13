@@ -1,0 +1,205 @@
+{% extends "forms/layout/wrapper.html" %}
+{% load humanize %}
+{% block form %}
+
+<section>
+  <div class="break-page-before">
+    <p class="text-center"><span class="font-bold">Part 2 - </span>Details of {{general_data.0.part_2_tilte}}</p>
+  </div>
+
+  <table class="mt-10 font-size-10">
+    <tr>
+      <td colspan="5" class="space">Game category</td>
+      <td class="space">< From the return filed></td>
+    </tr>
+    <tr>
+      <th colspan="5" style="background-color:yellow">Registration number of the facility:</th>
+      <td style="background-color:yellow">< From the return filed> </td>
+    </tr>
+    <tr >
+      <th colspan="2" >Details of Gaming Tax</th>
+      <td colspan="5"></td>
+    </tr>
+    <tr>
+      <th class="w-30">Sn</th>
+      <th>Description</th>
+      <th>Number of bets / Stake</th>
+      <th>Total Stake(B)</th>
+      <th>Total Winnings/Payout(C)</th>
+      <th>Gross Gaming Revenue D=(B-C)</th>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>< Game Type 1></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>< Game Type 2></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>< Game Type 3></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>< Game Type 4></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>< Game Type 5></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td><b>Total</b> (Sum of row 1 to 5)</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Rate of Gaming Tax</b></td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">25%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td><b>Gaming Tax Payable</b> (Row 6 times 7)</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+  </table>
+  <table class="mt-10 font-size-10">
+    <tr>
+      <td colspan="5" class="space">Game category</td>
+      <td class="space">< From the return filed></td>
+    </tr>
+    <tr>
+      <th colspan="5" style="background-color:yellow">Registration number of the facility:</th>
+      <td style="background-color:yellow">< From the return filed> </td>
+    </tr>
+    <tr >
+      <th colspan="2" >Details of Gaming Tax</th>
+      <td colspan="5"></td>
+    </tr>
+    <tr>
+      <th class="w-30">Sn</th>
+      <th>Description</th>
+      <th>Number of bets / Stake</th>
+      <th>Total Stake(B)</th>
+      <th>Total Winnings/Payout(C)</th>
+      <th>Gross Gaming Revenue D=(B-C)</th>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>< Game Type 1></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>< Game Type 2></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>< Game Type 3></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>< Game Type 4></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>< Game Type 5></td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td><b>Total</b> (Sum of row 1 to 5)</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+      <td class="text-right">-</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Rate of Gaming Tax</b></td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">25%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td><b>Gaming Tax Payable</b> (Row 6 times 7)</td>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="text-right">-</td>
+    </tr>
+  </table>
+
+  <table class="mt-10 font-size-10">
+    <tr>
+      <th colspan="3"><b>Summary</b></th>
+    </tr>
+    <tr>
+      <th class="w-30">11</th>
+      <td>Gaming Tax Payable From facility 1</td>
+      <td class="w-70 text-right">-</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Gaming Tax payable from facility 2</td>
+      <td class="w-70 text-right">-</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td><b>Total Gaming Tax Payable</b> (Row 30 times 31)</td>
+      <td class="w-70 text-right">-</td>
+    </tr> 
+  </table>
+</section>
+
+{% endblock %}

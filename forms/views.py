@@ -52,7 +52,8 @@ def read_json_data_file(json_filepath):
             data = json.load(f)
             return data
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        raise Exception(f"Error reading JSON file: {json_filepath}. Reason: {e}")
+        # raise Exception(f"Error reading JSON file: {json_filepath}. Reason: {e}")
+        return 'No data provided!'
 
 
 def render_pdf_file(pdf_output_path):

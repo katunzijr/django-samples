@@ -6,18 +6,38 @@
         "note": "This return is filed under the provisions of Regulation 5 (1) of the Tourism (Tourism Development Levy) Regulations 2013.",
         "note_cont": "You are hereby required to submit the Return within 7 days after the end of each calendar month period.",
         "part_2_tilte": "Bed Night Levy (Amount in TZS)",
-        "html_template_path": "bnl/bed_night_levy.html",
-        "pdf_output_path": "bnl/bed_night_levy.pdf",
-        "data_path": "bnl/bed_night_levy.json"
+        "html_template_path": "bnl/3 3. Bed Night Levy Return.html",
+        "pdf_output_path": "bnl/3 3. Bed Night Levy Return.pdf",
+        "data_path": "bnl/3 3. Bed Night Levy Return.json"
     },{
         "id": 2,
         "initial": "lbc",
         "name": "Gaming Tax On Land based Casino",
-        "note": "Note: This return is submitted under the provision of Section 32 of the Gaming Act, 2003 R.E. 2019.",
-        "note_cont": "You are hereby required to submit the Return within 3 days after the end of each calendar week period, not later than Wednesday in each week.",
+        "note": "This return is submitted under the provision of Section 32 of the Gaming Act, 2003 R.E. 2019.",
+        "note_cont": "You are hereby required to submit the Return within 7 days after the end of each calendar month period.",
         "part_2_tilte": "Land based Casino - Gaming Return (Amount in TZS)",
-        "html_template_path": "gt/land_based_casino.html",
-        "pdf_output_path": "gt/land_based_casino.pdf",
-        "data_path": "gt/land_based_casino.json"
+        "html_template_path": "gt/4(a) 3. Land based Casino_Submitted Return_Gaming Tax.html",
+        "pdf_output_path": "gt/4(a) 3. Land based Casino_Submitted Return_Gaming Tax.pdf",
+        "data_path": "gt/4(a) 3. Land based Casino_Submitted Return_Gaming Tax.json"
+    },{
+        "id": 3,
+        "initial": "oic",
+        "name": "Gaming Tax On Online Casino",
+        "note": "This return is submitted under the provision of Section 32 of the Gaming Act, 2003 R.E. 2019",
+        "note_cont": "You are hereby required to submit the Return within 3 days after the end of each calendar week period, not later than Wednesday in each week.",
+        "part_2_tilte": "Online Casino - Gaming Return (Amount in TZS)",
+        "html_template_path": "gt/4(b) 3. Online Casino_Submitted Return_Gaming Tax.html",
+        "pdf_output_path": "gt/4(b) 3. Online Casino_Submitted Return_Gaming Tax.pdf",
+        "data_path": "gt/4(b) 3. Online Casino_Submitted Return_Gaming Tax.json"
+    },{
+        "id": 4,
+        "initial": "fm",
+        "name": "Gaming Tax On Forty Machine",
+        "note": "This return is submitted under the provision of Section 32 of the Gaming Act, 2003 R.E. 2019.",
+        "note_cont": "You are hereby required to submit the Return within 7 days after the end of each calendar month period",
+        "part_2_tilte": "Forty Machine - Gaming Return (Amount in TZS)",
+        "html_template_path": "gt/4(d) 3. Forty Machine_Submitted Return_Gaming Tax.html",
+        "pdf_output_path": "gt/4(d) 3. Forty Machine_Submitted Return_Gaming Tax.pdf",
+        "data_path": "gt/4(d) 3. Forty Machine_Submitted Return_Gaming Tax.json"
     }
 ]

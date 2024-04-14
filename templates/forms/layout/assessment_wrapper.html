@@ -1,0 +1,47 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="python pdfkit+wkhtml2pdf">
+  <title>return assessment pdf</title>
+</head>
+<body>
+
+  <section>
+    {% include "forms/layout/top_img_header.html" %}
+    <div class="text-center font-bold mt-40">
+      <p class="font-size-16">
+        DOMESTIC REVENUE DEPARTMENT
+      </p>
+      <p class="font-size-14">
+        Notice of Self Assessment for VGG
+      </p>
+    </div>
+  </section>
+
+  {% block form %}{% endblock %}
+
+  <footer class="mt-40">
+    <div>
+      <p class="text-center"><span style="font-family: Arial; font-weight: bold">Please quote the above Tax Debit Number when registering payments using Tax Bank or SWIFT/TISS.
+      </span></p>
+      <div class="mb-40">
+        <p class="text-justify">
+          In case you are aggrieved with this assessment you may object by filing notice of Objection to the Commissioner General within 30 days from the date of service of the assessment in accordance with the provision of section 51 of the Tax Administration Act, 2015 read together with its Regulations.
+        </p>
+      </div>
+      <div class="mb-40">
+        <p class="text-center font-bold">"Together We Build Our Nation"</p>
+      </div>
+      <div>
+        <p class="text-center">Name of RM/Commissioner</p>
+        <p class="text-center">Regional Manager/Commissioner</p>
+        <p class="text-center">Name of Tax Region/Department in case of LTD</p>
+      </div>
+    </div>
+</footer>
+
+</body>
+</html>

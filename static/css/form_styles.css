@@ -1,26 +1,13 @@
-body {
-    max-width: 1024px;
-    margin: 0px auto;
-    font-family: Arial;
-}
-table {
-    border-collapse: collapse;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 924px;
-}
-th, td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-th {
-    background-color: #f2f2f2;
-}
+body {max-width: 1024px; margin: 0px auto; font-family: Arial;}
+
+table {border-collapse: collapse; margin: 0 auto; width: 100%; max-width: 924px;}
+th, td {border: 1px solid #dddddd; text-align: left; padding: 8px;}
+th {background-color: #f2f2f2;}
 
 .space-1\/2{width: 50%;}
 .w-70 {min-width: 80px}
 .w-30 {width: 30px}
+.w-100 {width: 100%;}
 
 .text-right {text-align: right;}
 .text-left {text-align: left;}
@@ -45,6 +32,7 @@ th {
 .mb-40 {margin-bottom: 40px;}
 
 .yellow-300 {background-color: #edebe0;}
+.gray-500 {background-color: #d7d7d7;}
 
 .break-page-even:nth-child(2n) {page-break-after: always;}
 .break-page-before {page-break-before: always;}

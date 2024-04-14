@@ -39,5 +39,15 @@
         "html_template_path": "gt/4(d) 3. Forty Machine_Submitted Return_Gaming Tax.html",
         "pdf_output_path": "gt/4(d) 3. Forty Machine_Submitted Return_Gaming Tax.pdf",
         "data_path": "gt/4(d) 3. Forty Machine_Submitted Return_Gaming Tax.json"
+    },{
+        "id": 5,
+        "initial": "vgg",
+        "name": "Virtual Games Gaming Tax",
+        "note": "With reference to the provision of Section 32 of the Gaming Act, 2003 R.E. 2019, your submitted return with reference number XXXXXXXXXXXXXXXXXXXXX has been assessed with a principal tax liability of TZS. 0.00 and penalty of TZS.  as depicted in the table below;",
+        "note_cont": "You are hereby required to submit the Return within 7 days after the end of each calendar month period",
+        "part_2_tilte": "Forty Machine - Gaming Return (Amount in TZS)",
+        "html_template_path": "gt/4(g) 2. Virtual Games_Assessment_Winning Tax.html",
+        "pdf_output_path": "gt/4(g) 2. Virtual Games_Assessment_Winning Tax.pdf",
+        "data_path": "gt/4(g) 2. Virtual Games_Assessment_Winning Tax.json"
     }
 ]

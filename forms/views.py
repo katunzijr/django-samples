@@ -4,6 +4,9 @@ from django.http import HttpResponse
 import os
 import base64
 import json
+from io import BytesIO
+import pyqrcode
+
 
 # PDF generation options (customizable)
 options = {
@@ -21,6 +24,24 @@ image_folder = 'static/images/'
 template_folder = 'templates/forms/'
 form_list_path = 'form_list.json'
 context = {}
+
+
+def generate_qrcode(taxType, taxPayerName, filedBy, declarantTin, tin, dateOfIssue, ReferenceNumber):
+
+    content = f"{taxType} of {taxPayerName} with\n" \
+                f"TIN: {tin} filed by {filedBy} with\n" \
+                f"TIN: {declarantTin} on {dateOfIssue} with\n" \
+                f"reference number {ReferenceNumber}"
+    
+    # Generate QR code
+    qr_code = pyqrcode.create(content)
+
+    # Convert QR code to BytesIO object
+    qr_code_buffer = BytesIO()
+    qr_code.png(qr_code_buffer, scale=6)
+
+    # Encode the BytesIO object as base64
+    return f'data:image/png;base64,{base64.b64encode(qr_code_buffer.getvalue()).decode()}'
 
 
 def read_json_form_file(target_initial):
@@ -137,7 +158,7 @@ def generate_pdf(request, form_initial):
     context['data'] = read_json_data_file(template_folder+context['general_data'][0]['data_path'])
 
     # Load image data as base64 encoded strings (for potential use in the template)
-    context['qrcode'] = get_image_file_as_base64_data('qrcode', 'png')
+    context['qrcode'] = generate_qrcode("Income Tax", "John Doe", "Jane Smith", "123456789", "987654321", "2023-08-15", "12345")
     context['tra_banner'] = get_image_file_as_base64_data('tra_banner', 'jpeg')
     context['signature'] = get_image_file_as_base64_data('signature', 'png')
 
@@ -166,3 +187,4 @@ def generate_pdf(request, form_initial):
     # Render the generated PDF as a downloadable response
     response = render_pdf_file(template_folder+context['general_data'][0]['pdf_output_path'])
     return response
+

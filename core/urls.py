@@ -15,11 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from forms import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('forms/generate_pdf/<str:form_initial>', views.generate_pdf), #url -> forms/generate_pdf/bnl
+    path('bednightlevy/', include('fileupload.urls', namespace='fileupload')),
+    path('excel/', include('exceldata.urls', namespace='exceldata')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

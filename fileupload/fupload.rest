@@ -1,0 +1,22 @@
+GET http://127.0.0.1:8000/bednightlevy/return/attachments/
+
+
+
+
+
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+# ----WebKitFormBoundary7MA4YWxkTrZu0gW
+# Content-Disposition: form-data; name="name"
+
+# headphones
+# ----WebKitFormBoundary7MA4YWxkTrZu0gW
+# Content-Disposition: form-data; name="price"
+
+# 20
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="lab-person.jpeg"
+Content-Type: application/octet-stream
+
+# < ./lab-person.jpeg
+# ----WebKitFormBoundary7MA4YWxkTrZu0gW

@@ -1,0 +1,290 @@
+{
+    "results": [
+        {
+            "columns": [
+                {
+                    "name": "FORM_CODE",
+                    "type": "VARCHAR2"
+                },
+                {
+                    "name": "CODEDESCRIPTION",
+                    "type": "VARCHAR2"
+                },
+                {
+                    "name": "NUMBEROFPARTS",
+                    "type": "NUMBER"
+                },
+                {
+                    "name": "STATUS_CT",
+                    "type": "NUMBER"
+                },
+                {
+                    "name": "TAXTYPE_CT",
+                    "type": "VARCHAR2"
+                },
+                {
+                    "name": "FREQUENCY",
+                    "type": "VARCHAR2"
+                }
+            ],
+            "items": [
+                {
+                    "form_code": "ITX200.03.E",
+                    "codedescription": "Statement of Estimate\/Revised Estimate of Tax Payable by Installments for an Individual",
+                    "numberofparts": 4,
+                    "status_ct": 1,
+                    "taxtype_ct": "PIT",
+                    "frequency": "ANNUAL"
+                },
+                {
+                    "form_code": "ITX202.03.E ",
+                    "codedescription": "Statement of Estimated\/Revised Estimate of Tax Payable by Installments on Behalf of Entity",
+                    "numberofparts": 4,
+                    "status_ct": 1,
+                    "taxtype_ct": "COR",
+                    "frequency": "ANNUAL"
+                },
+                {
+                    "form_code": "ITX215.03.E",
+                    "codedescription": "Statements and Payments of Taxes Withheld  for Employees",
+                    "numberofparts": 3,
+                    "status_ct": 1,
+                    "taxtype_ct": "PAY",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX203.03.E",
+                    "codedescription": "Return of Income for Entity",
+                    "numberofparts": 22,
+                    "status_ct": 1,
+                    "taxtype_ct": "COR",
+                    "frequency": "ANNUAL"
+                },
+                {
+                    "form_code": "ITX202.03.E",
+                    "codedescription": "Statement of Estimated Income and Tax Payable by Entity for Banking",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "COR",
+                    "frequency": "ANNUAL"
+                },
+                {
+                    "form_code": "ITX201.03.E",
+                    "codedescription": "Return of Income for Individual",
+                    "numberofparts": 19,
+                    "status_ct": 1,
+                    "taxtype_ct": "PIT",
+                    "frequency": "ANNUAL"
+                },
+                {
+                    "form_code": "ITX219.03.E",
+                    "codedescription": "Skills and Development Levy\r\nMonthly Return\r\n",
+                    "numberofparts": 3,
+                    "status_ct": 1,
+                    "taxtype_ct": "SDL",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX240.02.B",
+                    "codedescription": "Value Aadded Tax Monthly Return",
+                    "numberofparts": 11,
+                    "status_ct": 1,
+                    "taxtype_ct": "VAT",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX285.01.E",
+                    "codedescription": "Bed Night Levy ",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "BNL",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX251.01.E",
+                    "codedescription": "Money Transfer Levy",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "MTL",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX852.02.E",
+                    "codedescription": "Slot Machine Gaming Tax",
+                    "numberofparts": 1,
+                    "status_ct": 0,
+                    "taxtype_ct": "GTR",
+                    "frequency": "WEEKLY"
+                },
+                {
+                    "form_code": "ITX853.02.E",
+                    "codedescription": "SMS Lottery Gaming Tax",
+                    "numberofparts": 1,
+                    "status_ct": 0,
+                    "taxtype_ct": "GTR",
+                    "frequency": "WEEKLY"
+                },
+                {
+                    "form_code": "ITX854.02.E",
+                    "codedescription": "Sport Betting Gaming Tax",
+                    "numberofparts": 1,
+                    "status_ct": 0,
+                    "taxtype_ct": "GTR",
+                    "frequency": "WEEKLY"
+                },
+                {
+                    "form_code": "ITX857.02.E",
+                    "codedescription": "Online Casino Gaming Tax",
+                    "numberofparts": 1,
+                    "status_ct": 0,
+                    "taxtype_ct": "GTR",
+                    "frequency": "WEEKLY"
+                },
+                {
+                    "form_code": "ITX859.02.E",
+                    "codedescription": "Forty Machine Gaming Tax",
+                    "numberofparts": 1,
+                    "status_ct": 0,
+                    "taxtype_ct": "GTR",
+                    "frequency": "WEEKLY"
+                },
+                {
+                    "form_code": "ITX861.01.E",
+                    "codedescription": "Virtual Games Gaming Tax",
+                    "numberofparts": 1,
+                    "status_ct": 0,
+                    "taxtype_ct": "GTR",
+                    "frequency": "WEEKLY"
+                },
+                {
+                    "form_code": "ITX864.01.E",
+                    "codedescription": "Land Based Casino Gaming Tax",
+                    "numberofparts": 1,
+                    "status_ct": 0,
+                    "taxtype_ct": "GTR",
+                    "frequency": "WEEKLY"
+                },
+                {
+                    "form_code": "ITX857.02E",
+                    "codedescription": "National Lottery Gaming Tax",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "GTR",
+                    "frequency": "WEEKLY"
+                },
+                {
+                    "form_code": "ITAX860.01.E",
+                    "codedescription": "Online Casino Winning Tax",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "WTR",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITAX858.02.E",
+                    "codedescription": "Forty Machine Winning Tax",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "WTR",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITAX862.01.E",
+                    "codedescription": "Virtual Games Winning Tax",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "WTR",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITAX863.01.E",
+                    "codedescription": "Land Based Casino Winning Tax",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "WTR",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITAX.855.02.E",
+                    "codedescription": "Sport Betting Winning Tax",
+                    "numberofparts": 1,
+                    "status_ct": 1,
+                    "taxtype_ct": "WTR",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX230.03.E",
+                    "codedescription": "Statements and Payments of Taxes Withheld (For Payment Other than PAYE)",
+                    "numberofparts": 3,
+                    "status_ct": 1,
+                    "taxtype_ct": "WHO",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX270.01.E",
+                    "codedescription": "Airport Service Charges",
+                    "numberofparts": 3,
+                    "status_ct": 1,
+                    "taxtype_ct": "ASC",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX271.01.E",
+                    "codedescription": "Port Service Charges",
+                    "numberofparts": 3,
+                    "status_ct": 1,
+                    "taxtype_ct": "PSC",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX215.03.E1",
+                    "codedescription": "Statements and Payments of Taxes Withheld  for Employees",
+                    "numberofparts": 3,
+                    "status_ct": 1,
+                    "taxtype_ct": "PAYE",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX255.03.E",
+                    "codedescription": "Excise Duty return form (For Manufacturers of Excisable Products)",
+                    "numberofparts": 7,
+                    "status_ct": 1,
+                    "taxtype_ct": "EXZ",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX200.TOBEFINISHED",
+                    "codedescription": "Excise Duty return form (For Manufacturers of Excisable Products)",
+                    "numberofparts": 7,
+                    "status_ct": 1,
+                    "taxtype_ct": "EXZ",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX267.01.E",
+                    "codedescription": "VAT Return for Digital Business",
+                    "numberofparts": 3,
+                    "status_ct": 0,
+                    "taxtype_ct": "VAT",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX231.03.E",
+                    "codedescription": "Income Tax Returns for Digital Business",
+                    "numberofparts": 3,
+                    "status_ct": 0,
+                    "taxtype_ct": "COR",
+                    "frequency": "MONTHLY"
+                },
+                {
+                    "form_code": "ITX231.03.E1",
+                    "codedescription": "Income Tax Returns for Digital Business",
+                    "numberofparts": 3,
+                    "status_ct": 0,
+                    "taxtype_ct": "PIT",
+                    "frequency": "MONTHLY"
+                }
+            ]
+        }
+    ]
+}

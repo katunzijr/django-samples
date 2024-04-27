@@ -1,0 +1,6 @@
+<form method="post" action="/bednightlevy/return/attachments/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="attachments" multiple>
+    <input type="number" name="return_id" value="7234200">
+    <button type="submit">Upload Files</button>
+</form>

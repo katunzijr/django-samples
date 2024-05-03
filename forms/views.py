@@ -44,37 +44,14 @@ def generate_qrcode(taxType, taxPayerName, filedBy, declarantTin, tin, dateOfIss
     return f'data:image/png;base64,{base64.b64encode(qr_code_buffer.getvalue()).decode()}'
 
 
-def read_json_form_file(target_initial):
+def read_json_form_file(form_type, tax_name):
     try:
         with open(form_list_path, "r") as f:
             data = json.load(f)
-            filtered_data = [item for item in data if item["initial"] == target_initial]
+            filtered_data = [item for item in data[form_type] if item["tax_name"] == tax_name]
             return filtered_data
     except (FileNotFoundError, json.JSONDecodeError) as e:
         raise Exception(f"Error reading JSON file: {form_list_path}. Reason: {e}")
-
-
-def read_json_data_file(json_filepath):
-    """
-    Reads a JSON file and returns its contents as a dictionary.
-
-    Args:
-        json_filepath (str): Path to the JSON file.
-
-    Returns:
-        dict: The parsed JSON data as a dictionary.
-
-    Raises:
-        Exception: If the file cannot be opened or read, or if there's an error
-                   parsing the JSON data.
-    """
-    try:
-        with open(json_filepath, "r") as f:
-            data = json.load(f)
-            return data
-    except (FileNotFoundError, json.JSONDecodeError) as e:
-        # raise Exception(f"Error reading JSON file: {json_filepath}. Reason: {e}")
-        return 'No data provided!'
 
 
 def render_pdf_file(pdf_output_path):
@@ -137,7 +114,7 @@ def pdf_to_base64(pdf_output_path):
     raise Exception(f"Error reading PDF file: {pdf_output_path}. Reason: {e}")
 
 
-def generate_pdf(request, form_initial):
+def generate_pdf_form(data, entitytin, form_type, tax_name): 
     """
     Generates a PDF from a JSON data file and a template, returning an HTTP response.
 
@@ -154,13 +131,14 @@ def generate_pdf(request, form_initial):
     """
 
     # Load data from JSON file
-    context['general_data'] = read_json_form_file(form_initial)
-    context['data'] = read_json_data_file(template_folder+context['general_data'][0]['data_path'])
+    context['general_data'] = read_json_form_file(form_type=form_type, tax_name=tax_name)
+    print(context['general_data'])
+    context['data'] = data
 
     # Load image data as base64 encoded strings (for potential use in the template)
-    context['qrcode'] = generate_qrcode("Income Tax", "John Doe", "Jane Smith", "123456789", "987654321", "2023-08-15", "12345")
+    context['qrcode'] = generate_qrcode("Income Tax", "John Doe", "Jane Smith", entitytin, "987654321", "2023-08-15", "123456789098765431")
     context['tra_banner'] = get_image_file_as_base64_data('tra_banner', 'jpeg')
-    context['signature'] = get_image_file_as_base64_data('signature', 'png')
+    context['signature'] = get_image_file_as_base64_data('signatures/Signature_Alfred', 'png')
 
     # Construct the full path to the HTML template file
     html_file_template = os.path.join(template_folder, context['general_data'][0]['html_template_path'])
@@ -182,9 +160,11 @@ def generate_pdf(request, form_initial):
 
     # Convert the generated PDF to base64 encoded string (for optional use)
     base64_encoded_pdf = pdf_to_base64(template_folder+context['general_data'][0]['pdf_output_path'])
-    # print(f"Base64 encoded PDF: {base64_encoded_pdf}")
-    
-    # Render the generated PDF as a downloadable response
-    response = render_pdf_file(template_folder+context['general_data'][0]['pdf_output_path'])
-    return response
 
+    # Render the generated PDF as a downloadable response
+    # response = render_pdf_file(template_folder+context['general_data'][0]['pdf_output_path'])
+    
+    return base64_encoded_pdf
+
+
+# generate_pdf_form(data = {}, entitytin = 123456789, form_type="submited", tax_name="Bed Night Levy")

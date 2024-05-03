@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('forms/generate_pdf/<str:form_initial>', views.generate_pdf), #url -> forms/generate_pdf/bnl
+    # path('forms/generate_pdf/<str:form_initial>', views.generate_pdf_form), #url -> forms/generate_pdf/bnl
     path('bednightlevy/', include('fileupload.urls', namespace='fileupload')),
     path('excel/', include('exceldata.urls', namespace='exceldata')),
 ]

@@ -15,6 +15,7 @@ class MultipleFileUploadSerializer(serializers.ModelSerializer):
     class Meta:
         model = BedNightReturn
         fields = [
+            'id',
             'return_master', 
             'return_master_copy',
             'attachment', 

@@ -104,7 +104,7 @@ def read_excel_file(uploaded_file):
 #                         'row_data': extracted_data,
 #                         'validation_error': str(e)  # Convert exception to string
 #                     })
-#                     if os.path.isfile():
+#                     if os.path.isfile(invalid_data_path):
 #                         existing_invalid_data = pd.read_excel(invalid_data_path)
 #                     else:
 #                         existing_invalid_data = None
@@ -146,6 +146,32 @@ def read_excel_file(uploaded_file):
 class ExcelFileUpload(APIView):
     parser_classes = (MultiPartParser, FormParser)
     # serializer_class = LiableToFileReturn1Serializer
+    def get_object(self, taxpayer_id, category_id, month, year):
+        try:
+            return LiableToFileReturn.objects.filter(
+                TAXPAYER_ID = taxpayer_id, 
+                CATEGORY_ID = category_id, 
+                MONTH = month,
+                YEAR = year,
+            ).first()
+        except LiableToFileReturn.DoesNotExist:
+            return None
+
+    def get(self, request):
+        objects = LiableToFileReturn.objects.all()
+        data = []
+        for obj in objects:
+            # Access object attributes and build the response data structure
+            data.append({
+                'TAXPAYER_ID': obj.TAXPAYER_ID,
+                'CATEGORY_ID': obj.CATEGORY_ID,
+                'IS_VISIBLE_TO_TP': obj.IS_VISIBLE_TO_TP,
+                'STATUS': obj.STATUS,
+                'YEAR': obj.YEAR,
+                'MONTH': obj.MONTH,
+                'ENTRYDATE': obj.ENTRYDATE,
+            })
+        return Response(data)
 
     def post(self, request):
 
@@ -165,9 +191,9 @@ class ExcelFileUpload(APIView):
             df = pd.read_csv(uploaded_file).dropna(how='all')
         else:
             return Response(
-                    data={"error": f'Only Excel Files (.xls or .xlsx or .csv) are allowed!'}, 
-                    status=status.HTTP_400_BAD_REQUEST
-                )
+                data={"error": f'Only Excel Files (.xls or .xlsx or .csv) are allowed!'}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
         try:
             desired_columns = ['TIN', 'CATEGORY_ID', 'MONTH']
@@ -262,4 +288,29 @@ class ExcelFileUpload(APIView):
                 data={"error": f'Error processing {uploaded_file.name} file: {e}'}, 
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+    def patch(self, request):
+        taxpayer_id = request.data.get('taxpayer_id')
+        category_id = request.data.get('category_id')
+        month = request.data.get('month')
+        year = request.data.get('year')
+
+        instance = self.get_object(taxpayer_id, category_id, month, year)
+        if not instance:
+            return Response({'error': f'Not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+        if 'approval_status' in request.data:
+            instance.STATUS = request.data.get('approval_status')
+        if 'is_visible_to_tp' in request.data:
+            instance.IS_VISIBLE_TO_TP = request.data.get('is_visible_to_tp')
+        if 'is_filed' in request.data:
+            instance.IS_FILLED = request.data.get('is_filed')
+        
+        try:
+            a = instance.save()
+            print(a)
+            return Response({'message': f'Updated successful'}, status=status.HTTP_202_ACCEPTED)
+        except Exception as e:
+            return Response({'Error': f'{e}'}, status=status.HTTP_400_BAD_REQUEST)
+        
 

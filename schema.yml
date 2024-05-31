@@ -1,0 +1,127 @@
+openapi: 3.0.3
+info:
+  title: Your Project API
+  version: 1.0.0
+  description: Your project description
+paths:
+  /bednightlevy/return/attachments/:
+    get:
+      operationId: bednightlevy_return_attachments_retrieve
+      tags:
+      - bednightlevy
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultipleFileUpload'
+          description: ''
+    post:
+      operationId: bednightlevy_return_attachments_create
+      tags:
+      - bednightlevy
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MultipleFileUpload'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MultipleFileUpload'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultipleFileUpload'
+          description: ''
+    put:
+      operationId: bednightlevy_return_attachments_update
+      tags:
+      - bednightlevy
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MultipleFileUpload'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MultipleFileUpload'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultipleFileUpload'
+          description: ''
+  /excel/upload-api/:
+    get:
+      operationId: excel_upload_api_retrieve
+      tags:
+      - excel
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: excel_upload_api_create
+      tags:
+      - excel
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: excel_upload_api_partial_update
+      tags:
+      - excel
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+components:
+  schemas:
+    MultipleFileUpload:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        return_master:
+          type: integer
+        return_master_copy:
+          type: string
+          readOnly: true
+        attachment: {}
+      required:
+      - id
+      - return_master_copy
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

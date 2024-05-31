@@ -100,23 +100,3 @@ class MultipleFileUploadAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
-# class FileUploadAPIView(APIView):
-#     parser_classes = (MultiPartParser, FormParser)
-#     serializer_class = FileUploadSerializer
-    
-#     def post(self, request, *args, **kwargs):
-#         serializer = self.serializer_class(data=request.data)
-#         if serializer.is_valid():
-#             uploaded_file = serializer.validated_data["file"]
-#             serializer.save()
-#             return Response(
-#                 serializer.data,
-#                 status=status.HTTP_201_CREATED
-#             )
-        
-#         return Response(
-#             serializer.errors,
-#             status=status.HTTP_400_BAD_REQUEST
-#         )
-
-

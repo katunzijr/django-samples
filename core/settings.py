@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
+from celery.schedules import crontab
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +42,8 @@ INSTALLED_APPS = [
     # Third Party Apps
     'django.contrib.humanize',
     'rest_framework',
+    'drf_spectacular',
+    'drf_yasg',
     # Custom Apps
     'forms',
     'fileupload',
@@ -131,3 +135,34 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    # YOUR SETTINGS
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Your Project API',
+    'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
+
+# Celery Configuration Options
+# CELERY_TIMEZONE = "Australia/Tasmania"
+# CELERY_TASK_TRACK_STARTED = True
+# CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+CELERY_BROKER_URL = 'redis://default:SJsTAkTXRMSuhxlUbubMYxmBREuSOiwA@roundhouse.proxy.rlwy.net:26098'
+CELERY_BEAT_SCHEDULE = {
+    'one-minute-task': {
+        'task': 'exceldata.tasks.update_unfiled_visibility_periodic',
+        # 'schedule': crontab(hour=0, minute=0),  # Run daily at midnight
+        'schedule': crontab(minute='*'),  # Run every 1 minutes
+        # Alternatively, you can use timedelta
+        # 'schedule': timedelta(minutes=2),
+    },
+}

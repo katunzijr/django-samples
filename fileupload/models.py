@@ -61,6 +61,7 @@ class BedNightReturn(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
+        ordering = ["-created_at"]
         db_table = "EFILE_BNL_RETURN"
         verbose_name = "BedNightReturn"
         verbose_name_plural = "BedNightReturns"

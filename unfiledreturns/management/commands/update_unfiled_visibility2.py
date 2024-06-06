@@ -1,4 +1,4 @@
-from exceldata.tasks import update_unfiled_monthly_status_periodic
+from unfiledreturns.tasks import update_unfiled_monthly_status_periodic
 from django.core.management.base import BaseCommand
 from time import sleep
 

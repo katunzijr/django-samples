@@ -41,8 +41,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # path('forms/generate_pdf/<str:form_initial>', views.generate_pdf_form), #url -> forms/generate_pdf/bnl
-    path('bednightlevy/', include('fileupload.urls', namespace='fileupload')),
-    path('excel/', include('exceldata.urls', namespace='exceldata')),
+    path('fileupload/', include('fileupload.urls', namespace='fileupload')),
+    path('returns/', include('unfiledreturns.urls', namespace='unfiledreturns')),
     
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),

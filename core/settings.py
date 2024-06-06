@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     # Custom Apps
     'forms',
     'fileupload',
-    'exceldata',
+    'unfiledreturns',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +86,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
+        # "ENGINE": "django.db.backends.oracle",
+        # "NAME": "DJANGO_SAMPLE_DB",
+        # "USER": "katunzijr",
+        # "PASSWORD": "katunzijr",
+        
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -159,10 +164,9 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 CELERY_BROKER_URL = 'redis://default:SJsTAkTXRMSuhxlUbubMYxmBREuSOiwA@roundhouse.proxy.rlwy.net:26098'
 CELERY_BEAT_SCHEDULE = {
     'one-minute-task': {
-        'task': 'exceldata.tasks.update_unfiled_visibility_periodic',
+        'task': 'unfiledreturns.tasks.update_unfiled_visibility_periodic',
         # 'schedule': crontab(hour=0, minute=0),  # Run daily at midnight
         'schedule': crontab(minute='*'),  # Run every 1 minutes
-        # Alternatively, you can use timedelta
-        # 'schedule': timedelta(minutes=2),
     },
 }
+

@@ -1,6 +1,7 @@
 from celery import shared_task
 from django.db import connection
 import datetime
+from .models import *
 
 @shared_task
 def update_unfiled_visibility_periodic(fn=None, sec=None):
@@ -9,7 +10,7 @@ def update_unfiled_visibility_periodic(fn=None, sec=None):
     current_year = datetime.datetime.now().year
 
     query = f"""
-        UPDATE ITAX_OTHER_RETURN_UNFILED_MONTHLY
+        UPDATE EFILE_UNFILED_RETURN_MONTHLY
         SET IS_VISIBLE_TO_TP = 1
         WHERE IS_VISIBLE_TO_TP = 0
         AND STATUS = 'UPD'
@@ -25,14 +26,13 @@ def update_unfiled_visibility_periodic(fn=None, sec=None):
 
 
 @shared_task
-def generate_taxpayer_returns():
-    # Logic to generate taxpayer returns
-    # Example of creating a dummy return entry
-    new_return = T_OTHRET_RETURNS(
-        taxpayer_id='123456',
+def generate_unfiled_visibility_annually():
+    # Logic to generate taxpayer unfiled return annually
+    unfiled_return_annually = UnfiledReturnAnnually(
+        taxpayer_id='123456789',
         year=datetime.now().year,
         amount=1000.00,
         created_at=datetime.now()
     )
-    new_return.save()
-    return "Taxpayer return generated"
+    unfiled_return_annually.save()
+    return "Taxpayer unfiled_return_annually generated"
